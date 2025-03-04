@@ -1,0 +1,87 @@
+/* Reset body and html */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Wrapper to push footer down */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content should grow to push footer down */
+.main-content {
+    flex: 1;
+}
+
+/* Footer styles */
+
+
+/* Styles for the About section */
+.about-container {
+    padding: 2rem;
+    min-height: 100vh;
+    /* Space around the section */
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 1rem;
+        /* Reduced padding for smaller screens */
+    }
+
+    .about-container h2 {
+        font-size: 1.5rem;
+        /* Smaller heading for mobile */
+    }
+
+    .about-container p {
+        font-size: 0.9rem;
+        /* Smaller paragraph text for mobile */
+    }
+}
+
+/* Additional responsiveness */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ******************************************************************************* */
+#logout-btn {
+    background-color: #dc3545;
+    /* Bootstrap Danger Red */
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: background 0.3s ease-in-out;
+}
+
+#logout-btn a {
+    color: white;
+    /* White text */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#logout-btn a:hover {
+    background-color: #c82333;
+    /* Darker red on hover */
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#logout-btn i {
+    font-size: 18px;
+}

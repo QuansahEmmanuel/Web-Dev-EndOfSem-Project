@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>B.O.A Food Delight Admin Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="ErrorMessage/iziToast.min.css" />
+    <script src="ErrorMessage/iziToast.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logo and Brand -->
+            <a class="navbar-brand d-flex align-items-center " href="index.html">
+                <img src="../Assets/logo.png" alt="Logo" height="60" class="me-2">
+                <span class="fw-bold">Admin Dashboard</span>
+            </a>
+
+            <!-- Toggler Button for Sidebar -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+                aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Logout Button -->
+            <div class="d-flex">
+                <a href="/index.html" class="btn btn-outline-danger d-flex align-items-center">
+                    <i class="bi bi-person-fill-slash me-2"></i>Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <!-- Overview Link -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#overview">
+                                <i class="bi bi-house-door"></i> Overview
+                            </a>
+                        </li>
+
+                        <!-- Food Section -->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseFood" role="button"
+                                aria-expanded="false" aria-controls="collapseFood">
+                                <i class="bi bi-egg-fried"></i> Food Section
+                                <i class="bi bi-chevron-down float-end"></i>
+                            </a>
+                            <div class="collapse" id="collapseFood">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#foodView" class="nav-link">View list of food</a></li>
+                                    <li><a href="#foodCreate" class="nav-link">Create food</a></li>
+                                    <li><a href="#foodDelete" class="nav-link">Delete food</a></li>
+                                    <li><a href="#foodEdit" class="nav-link">Edit food</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Orders Section -->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseOrders" role="button"
+                                aria-expanded="false" aria-controls="collapseOrders">
+                                <i class="bi bi-cart-check"></i> Orders Section
+                                <i class="bi bi-chevron-down float-end"></i>
+                            </a>
+                            <div class="collapse" id="collapseOrders">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#orderView" class="nav-link">View orders</a></li>
+                                    <li><a href="#orderDelete" class="nav-link">Delete Orders</a></li>
+                                    <li><a href="#orderStatus" class="nav-link">Edit order status</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Account Section -->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseAccount" role="button"
+                                aria-expanded="false" aria-controls="collapseAccount">
+                                <i class="bi bi-people"></i> Account Section
+                                <i class="bi bi-chevron-down float-end"></i>
+                            </a>
+                            <div class="collapse" id="collapseAccount">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#paymentView" class="nav-link">View Payment Transaction</a></li>
+                                    <li><a href="#accountView" class="nav-link">View accounts List</a></li>
+                                    <li><a href="#accountDelete" class="nav-link">Delete Account</a></li>
+                                    <li><a href="#accountCreate" class="nav-link">Create Account</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Messages Section -->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseMessages" role="button"
+                                aria-expanded="false" aria-controls="collapseMessages">
+                                <i class="bi bi-chat-dots"></i> Messages Section
+                                <i class="bi bi-chevron-down float-end"></i>
+                            </a>
+                            <div class="collapse" id="collapseMessages">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#messagesView" class="nav-link">View received Messages</a></li>
+                                    <li><a href="#messagesReply" class="nav-link">Reply Messages</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <!-- Dashboard Overview -->
+                <div id="overview" class="pt-3">
+                    <h1>Dashboard Overview</h1>
+                    <div class="row">
+                        <!-- Sample Card: Total Foods -->
+                        <div class="col-md-4">
+                            <div class="card text-white bg-primary mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Foods</h5>
+                                    <p class="card-text" id="totalFood"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sample Card: Total Orders -->
+                        <div class="col-md-4">
+                            <div class="card text-white bg-success mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Orders</h5>
+                                    <p class="card-text" id="total_order_display"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sample Card: Pending Messages -->
+                        <div class="col-md-4">
+                            <div class="card text-white bg-warning mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Pending Messages</h5>
+                                    <p class="card-text">5</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sections for demonstration -->
+                <section id="foodView" class="mt-5">
+                    <h2>Food Section: View list of food</h2>
+                    <button class="btn btn-success d-flex align-items-center" id="viewFood"><img
+                            src="../Admin_DashBoard/icons/eye-solid.svg" alt="eye" height="20" class="me-2">
+                        Click To View Foods
+                    </button>
+                    <div class="table-responsive mt-3 flex-wrap gap-2 justify-content-center" id="foodTable"
+                        style="display: none">
+                        <!-- foods will be displayed here -->
+                    </div>
+                </section>
+
+                <section id="foodCreate" class="mt-5">
+                    <h2>Food Section: Create food</h2>
+                    <button class="btn btn-success d-flex align-items-center" id="createFood"><img
+                            src="../Admin_DashBoard/icons/cart-plus-solid.svg" alt="eye" height="20" class="me-2">
+                        Click To Add Food
+                    </button>
+
+                    <div class="table-responsive mt-3 flex-column justify-content-center align-content-center"
+                        id="createFoodForm" style="display: none">
+                        <h2 class="mb-4">Add Food</h2>
+                        <form id="addFoodForm">
+                            <div class="mb-3">
+                                <label for="foodName" class="form-label">Food Name</label>
+                                <input type="text" class="form-control" name="foodName" placeholder="Enter Food Name"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="foodCategory" class="form-label">Category</label>
+                                <select class="form-select mb-3" name="foodCategory" required>
+                                    <option value="" disabled selected>Select Food Category</option>
+                                    <option value="continentalFoods">Continental Food</option>
+                                    <option value="localFoods">Local Food</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="foodPrice" class="form-label">Price (₵)</label>
+                                <input type="number" class="form-control" name="foodPrice" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="foodImage" class="form-label">Food Image</label>
+                                <input type="url" class="form-control" name="foodImage" required
+                                    placeholder="Enter Food Image URL">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="foodDescription" class="form-label">Description</label>
+                                <textarea class="form-control" name="foodDescription" rows="3" required
+                                    placeholder="Enter Food Description"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 p-3">Add Food</button>
+
+
+                        </form>
+
+                    </div>
+                </section>
+
+                <section id="foodDelete" class="mt-5">
+                    <h2>Food Section: Delete food</h2>
+                    <button class="btn btn-success d-flex align-items-center" id="deleteFood"><img
+                            src="../Admin_DashBoard/icons/trash-solid.svg" alt="eye" height="20" class="me-2">
+                        Click To Delete Food
+                    </button>
+
+                    <div class="table-responsive mt-3 flex-column justify-content-center align-content-center"
+                        id="deleteFoodForm" style="display: none">
+                        <h2 class="mb-4">Delete Food</h2>
+                        <form id="delete_Food_Form">
+                            <div class="mb-3 w-100">
+                                <div class="mb-3">
+
+                                    <div class="mb-3">
+                                        <label for="foodId" class="form-label">Food ID#</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="foodId"
+                                                placeholder="Enter Food ID#" id="delet_foodId">
+                                            <button type="button" class="btn btn-primary"
+                                                onclick="DeleteSearchFoodid()">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="foodCategory" class="form-label">Category</label>
+                                    <select class="form-select mb-3" name="foodCategory" id="delete_foodCategory">
+                                        <option value="" disabled selected>Select Food Category</option>
+                                        <option value="continentalFoods">Continental Food</option>
+                                        <option value="localFoods">Local Food</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <button type="submit" class="btn btn-danger w-100 p-3">Delete Food</button>
+
+
+                        </form>
+                    </div>
+                </section>
+
+                <section id="foodEdit" class="mt-5">
+                    <h2>Food Section: Edit food</h2>
+                    <button class="btn btn-success d-flex align-items-center" id="editFood"><img
+                            src="../Admin_DashBoard/icons/pen-to-square-solid.svg" alt="eye" height="20" class="me-2">
+                        Click To Edit Food
+                    </button>
+
+                    <div class="table-responsive mt-3 flex-column justify-content-center align-content-center"
+                        id="editFoodForm" style="display: none">
+                        <h2 class="mb-4">Edit Food</h2>
+                        <form id="edit_Food_Form">
+                            <div class="mb-3 w-100">
+                                <div class="mb-3">
+                                    <label for="foodId" class="form-label">Food ID#</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="foodId"
+                                            placeholder="Enter Food ID#" id="foodId">
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="searchFoodid()">Search</button>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="foodCategory" class="form-label">Category</label>
+                                    <select class="form-select mb-3" name="foodCategory" id="foodCategory">
+                                        <option value="" disabled selected>Select Food Category</option>
+                                        <option value="continentalFoods">Continental Food</option>
+                                        <option value="localFoods">Local Food</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="foodName" class="form-label">Food Name</label>
+                                    <input type="text" class="form-control" name="foodName"
+                                        placeholder="Enter Food Name" id="foodName">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="foodPrice" class="form-label">Price (₵)</label>
+                                    <input type="number" class="form-control" name="foodPrice" id="foodPrice">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="foodImage" class="form-label">Food Image</label>
+                                    <input type="text" class="form-control" name="foodImage"
+                                        placeholder="Enter Food Image URL" id="foodImage">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="foodDescription" class="form-label">Description</label>
+                                    <textarea class="form-control" name="foodDescription" rows="3"
+                                        placeholder="Enter Food Description" id="foodDescription"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 p-3">Edit Food</button>
+
+
+                        </form>
+                    </div>
+
+                </section>
+
+                <section id="orderView" class="mt-5">
+                    <h2>Orders Section: View orders</h2>
+                    <button class="btn btn-success d-flex align-items-center" id="viewOrder"><img
+                            src="../Admin_DashBoard/icons/eye-solid.svg" alt="eye" height="20" class="me-2">
+                        Click To View Orders
+                    </button>
+                    <div class="table-responsive mt-3 flex-column justify-content-center align-content-center"
+                        id="orderTable" style="display: none">
+                        <h1 class="text-center mb-4">Order List</h1>
+                        <div id="orderContainer" class="table-responsive mt-3"></div>
+                    </div>
+
+                </section>
+
+                <section id="orderDelete" class="mt-5">
+                    <h2>Orders Section: Delete Orders</h2>
+                    <button class="btn btn-success d-flex align-items-center mb-3" id="deleteOrder"><img
+                            src="../Admin_DashBoard/icons/trash-solid.svg" alt="eye" height="20" class="me-2">
+                        Click To Delete Orders
+                    </button>
+
+                    <div class="table-responsive mt-3 flex-column justify-content-center align-content-center"
+                        id="deleteOrderbox" style="display: none">
+                        <form id="delete_order_Form">
+                            <div class="mb-3 w-100">
+                                <div class="mb-3">
+                                    <label for="oderId" class="form-label">Order ID#</label>
+                                    <input type="text" class="form-control" name="orderId" placeholder="Enter Order ID#"
+                                        id="deleteId">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-danger w-100 p-3">Delete Food</button>
+
+
+                        </form>
+                    </div>
+                </section>
+
+                <section id="orderStatus" class="mt-5">
+                    <h2>Orders Section: Edit order status</h2>
+                    <button class="btn btn-success d-flex align-items-center mb-3" id="order_status_btn"><img
+                            src="../Admin_DashBoard/icons/pen-to-square-solid.svg" alt="eye" height="20" class="me-2">
+                        Click To Edit Order Status
+                    </button>
+
+                    <div class="table-responsive mt-3 flex-column justify-content-center align-content-center"
+                        id="Order_status_box" style="display: none">
+                        <div class="mb-3">
+                            <label for="foodId" class="form-label">Order ID#</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="foodId" placeholder="Enter Order ID#"
+                                    id="order_status_id">
+                                <button type="button" class="btn btn-primary" onclick="orderStatusID()">Search</button>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editCategory" class="form-label">Edit Status </label>
+                                <select class="form-select mb-3" name="editCategory" id="edit_status">
+                                    <option value="" disabled selected>Select Status</option>
+                                    <option value="0">Pending</option>
+                                    <option value="1">Delivered</option>
+                                </select>
+                                <button class="btn btn-warning w-100 p-3" onclick="submitStatus()">Edit</button>
+                            </div>
+                        </div>
+                </section>
+
+                <section id="paymentView" class="mt-5">
+                    <h2>Account Section: View Payment Transcation</h2>
+                    <button class="btn btn-success d-flex align-items-center mb-3" id="payment_tansaction_btn"><img
+                            src="../Admin_DashBoard/icons/eye-solid.svg" alt="eye" height="20" class="me-2">
+                        Click To View Payment Transcation
+                    </button>
+                    <div class="table-responsive mt-3 flex-column justify-content-center align-content-center"
+                        id="payment_tansaction_container" style="display: none">
+                        <div class="mb-3">
+                            <label for="PaymentId" class="form-label">Order ID#</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="PaymentId" placeholder="Enter Order ID#"
+                                    id="input_ID">
+                                <button type="button" class="btn btn-primary" onclick="viewPaymentDetails()">Search
+                                </button>
+                            </div>
+                            <div id="payment_details_card" class="bg-light">
+                                <!-- ................. -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="accountView" class="mt-5">
+                    <h2>Account Section: View accounts List</h2>
+                    <button class="btn btn-success d-flex align-items-center mb-3" id="view_account_btn"><img
+                            src="../Admin_DashBoard/icons/eye-solid.svg" alt="eye" height="20" class="me-2">
+                        Click To View Accounts Lists
+                    </button>
+                    <div class="table-responsive mt-3 flex-column justify-content-center align-content-center"
+                        id="view_account_container" style="display: none">
+                        <div class="mb-3">
+                            <div id="display_account"></div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section id="accountDelete" class="mt-5">
+                    <h2>Account Section: Delete Account</h2>
+                    <button class="btn btn-success d-flex align-items-center mb-3" id="delete_accout_btn"><img
+                            src="../Admin_DashBoard/icons/trash-solid.svg" alt="eye" height="20" class="me-2">
+                        Click To Delete Account
+                    </button>
+
+                    <div class="table-responsive mt-3 flex-column justify-content-center align-content-center"
+                        id="delete_container" style="display: none">
+                        <form id="delete_account_Form">
+                            <div class="mb-3 w-100">
+                                <div class="mb-3">
+                                    <label for="delete_accont" class="form-label">Account ID#</label>
+                                    <input type="text" class="form-control" name="delete_accont"
+                                        placeholder="Enter Account ID#" id="delete_account_Id">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-danger w-100 p-3">Delete Account</button>
+
+
+                        </form>
+                    </div>
+                </section>
+
+                <section id="accountCreate" class="mt-5">
+                    <h2>Account Section: Create Account</h2>
+                    <button class="btn btn-success d-flex align-items-center" id="create_account_btn"><img
+                            src="../Admin_DashBoard/icons/user-plus-solid.svg" alt="eye" height="20" class="me-2">
+                        Click To Create Account
+                    </button>
+
+                    <div class="table-responsive mt-3 flex-column justify-content-center align-content-center"
+                        id="create_account_container" style="display: none">
+                        <div class="mb-3">
+                            <h2 class="mb-4">Create User Account</h2>
+                            <form id="create_account_form">
+                                <div class="mb-3">
+                                    <label for="user_name" class="form-label">User Name</label>
+                                    <input type="text" class="form-control" name="user_name"
+                                        placeholder="Enter User Full Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="user_role" class="form-label">User Role</label>
+                                    <select class="form-select mb-3" name="user_role" required>
+                                        <option value="" disabled selected>Select User Role</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="user">User</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="user_email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="user_email" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" name="phoneNumber" required
+                                        placeholder="Enter Phone Number">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="user_password" class="form-label">Password</label>
+                                    <input type="text" class="form-control" name="user_password" required
+                                        placeholder="Enter Password">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary w-100 p-3">Create User</button>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="messagesView" class="mt-5">
+                    <h2>Messages Section: View received Messages</h2>
+                    <p>Content goes here...</p>
+                </section>
+
+                <section id="messagesReply" class="mt-5 mb-5">
+                    <h2>Messages Section: Reply Messages</h2>
+                    <p>Content goes here...</p>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
