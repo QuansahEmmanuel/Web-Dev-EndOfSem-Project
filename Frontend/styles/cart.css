@@ -1,0 +1,81 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+/* Wrapper to push footer down */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content should grow to push footer down */
+.main-content {
+    flex: 1;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* cart section  */
+@media (min-width: 1025px) {
+    .h-custom {
+        height: 100vh !important;
+    }
+}
+
+
+
+.cart-badge {
+    background-color: red;
+    /* Red background for notification effect */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    /* Makes it round */
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    min-width: 18px;
+    text-align: center;
+}
+
+/* ******************************************************************************* */
+#logout-btn {
+    background-color: #dc3545;
+    /* Bootstrap Danger Red */
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: background 0.3s ease-in-out;
+}
+
+#logout-btn a {
+    color: white;
+    /* White text */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#logout-btn a:hover {
+    background-color: #c82333;
+    /* Darker red on hover */
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#logout-btn i {
+    font-size: 18px;
+}

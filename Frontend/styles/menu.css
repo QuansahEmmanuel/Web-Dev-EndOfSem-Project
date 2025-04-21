@@ -1,0 +1,268 @@
+/* Reset body and html */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+/* Wrapper to push footer down */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content should grow to push footer down */
+.main-content {
+    flex: 1;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+
+
+/* Search Bar Styling */
+.search-container {
+    padding: 20px;
+    /* Add some padding around the search bar */
+    background-color: #f8f9fa;
+    margin-bottom: 50px;
+    /* Light background color (optional) */
+}
+
+.search-form {
+    width: 100%;
+    /* Ensure the form takes full width */
+    max-width: 800px;
+    /* Set a maximum width for larger screens */
+    margin: 0 auto;
+    /* Center the form */
+    gap: 10px;
+    /* Spacing between form elements */
+}
+
+.search-input {
+    flex-grow: 1;
+    /* Allow the input to expand */
+    border-radius: 5px;
+    /* Rounded corners for the input */
+    padding: 10px;
+    /* Add padding inside the input box */
+    border: 1px solid #ced4da;
+    /* Light grey border */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Subtle inner shadow */
+}
+
+.search-input:focus {
+    border-color: #80bdff;
+    /* Highlight border on focus */
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    /* Blue outline on focus */
+}
+
+.search-button {
+    background-color: #007bff;
+    /* Blue button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+.search-button:focus {
+    /* Optional: Add focus styles if needed */
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+    /* Slightly more prominent outline */
+}
+
+
+.sort-dropdown .dropdown-toggle {
+    background-color: #6c757d;
+    /* Grey dropdown button */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    /* Make the dropdown button the same width as the input */
+}
+
+.sort-dropdown .dropdown-menu {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Add a subtle shadow to the dropdown */
+}
+
+.sort-dropdown .dropdown-item {
+    cursor: pointer;
+    padding: 8px 16px;
+    /* Adjust padding as needed */
+}
+
+.sort-dropdown .dropdown-item:hover {
+    background-color: #f0f0f0;
+    /* Light gray on hover */
+}
+
+
+/* Responsive adjustments (optional) */
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column;
+        /* Stack elements vertically on smaller screens */
+        gap: 10px;
+        /* Adjust spacing */
+    }
+
+    .search-button,
+    .sort-dropdown .dropdown-toggle {
+        width: 100%;
+        /* Make button and dropdown full width */
+    }
+
+}
+
+
+
+
+
+
+/* Main container to hold cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Ensures the cards wrap to the next row if there's not enough space */
+    justify-content: center;
+    /* Aligns the cards to the left */
+    gap: 20px;
+    /* Creates space between cards */
+    padding: 20px;
+}
+
+.card {
+    width: 250px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0;
+    /* Ensure there are no default margins */
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.add-btn {
+    padding: 8px 12px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+}
+
+
+.cart-badge {
+    background-color: red;
+    /* Red background for notification effect */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    /* Makes it round */
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    min-width: 18px;
+    text-align: center;
+}
+
+/* ******************************************************************************* */
+#logout-btn {
+    background-color: #dc3545;
+    /* Bootstrap Danger Red */
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: background 0.3s ease-in-out;
+}
+
+#logout-btn a {
+    color: white;
+    /* White text */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#logout-btn a:hover {
+    background-color: #c82333;
+    /* Darker red on hover */
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#logout-btn i {
+    font-size: 18px;
+}

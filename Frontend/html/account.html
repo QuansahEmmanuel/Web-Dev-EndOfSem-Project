@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../styles/account.css">
+</head>
+
+<body>
+
+    <div id="signup-container" class="container" style="display: none">
+        <div class="signup-header">
+            <h1>Sign Up</h1>
+            <a class="close-button" href="./index.html">Close
+                <img src="/Assets/icons8-close.svg" alt="Close Icon">
+            </a>
+        </div>
+        <form action="/index.js" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone-number">Phone Number</label>
+            <input type="number" id="phone-number" name="phone-number" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Sign Up</button>
+            <p class="account-prompt">Already have an account? <a href="#" id="login-link" class="form-link">Login</a>
+            </p>
+        </form>
+    </div>
+
+    <div id="login-container" class="container">
+        <div class="signup-header">
+            <h1>Login</h1>
+            <a class="close-button" href="./index.html" style="text-decoration: none;">Close
+                <img src="/Assets/icons8-close.svg" alt="Close Icon">
+            </a>
+        </div>
+        <form id="login-form">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+            <p class="account-prompt">Click here to <a href="#" id="signup-link" class="form-link">Sign Up</a></p>
+        </form>
+    </div>
+
+
+    <script src="../javaScript/account.js"></script>
+</body>
+
+</html>

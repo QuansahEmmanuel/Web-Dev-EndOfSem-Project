@@ -1,0 +1,84 @@
+/* General Styling */
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contact Page */
+.contact {
+    padding: 4%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.col-md-3 {
+    background: #ff9b00;
+    padding: 4%;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info img {
+    margin-bottom: 15%;
+}
+
+.contact-info h2 {
+    margin-bottom: 10%;
+}
+
+.col-md-9 {
+    background: #fff;
+    padding: 3%;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+/* ******************************************************************************* */
+#logout-btn {
+    background-color: #dc3545;
+    /* Bootstrap Danger Red */
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: background 0.3s ease-in-out;
+}
+
+#logout-btn a {
+    color: white;
+    /* White text */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#logout-btn a:hover {
+    background-color: #c82333;
+    /* Darker red on hover */
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#logout-btn i {
+    font-size: 18px;
+}

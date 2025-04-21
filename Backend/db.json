@@ -1,0 +1,202 @@
+{
+  "continentalFoods": [
+    {
+      "id": "1",
+      "name": "Assorted Fried Rice",
+      "price": 25,
+      "image": "/Assets/ContenentalFoods/Assorted fried rice.jpg",
+      "description": "Delicious food description.",
+      "foodCategory": "continentalFoods"
+    },
+    {
+      "id": "3",
+      "name": "Battered Fish",
+      "price": 54,
+      "image": "/Assets/ContenentalFoods/Battered fish.jpg",
+      "description": "Delicious food description.",
+      "foodCategory": "continentalFoods"
+    },
+    {
+      "id": "4",
+      "name": "Filled Jacket Potatoes",
+      "price": 40,
+      "image": "/Assets/ContenentalFoods/Filled jacket potatoes.jpg",
+      "description": "Delicious food description.",
+      "foodCategory": "continentalFoods"
+    },
+    {
+      "id": "5",
+      "name": "Fried Rice",
+      "price": 40,
+      "image": "/Assets/ContenentalFoods/fried-rice.png",
+      "description": "Delicious food description.",
+      "foodCategory": "continentalFoods"
+    },
+    {
+      "name": "Jollof And Chicken",
+      "foodCategory": "continentalFoods",
+      "description": "Delicious food description.",
+      "price": "40",
+      "image": "/Assets/ContenentalFoods/jollof and chicken.jpg",
+      "id": "6"
+    },
+    {
+      "id": "7",
+      "name": "Onion Fried Rice",
+      "price": 40,
+      "image": "/Assets/ContenentalFoods/Onion-Fried-Rice.jpg",
+      "description": "Delicious food description.",
+      "foodCategory": "continentalFoods"
+    },
+    {
+      "id": "8",
+      "name": "Prawn Pie",
+      "price": 40,
+      "image": "/Assets/ContenentalFoods/Prawn pie.jpg",
+      "description": "Delicious food description.",
+      "foodCategory": "continentalFoods"
+    },
+    {
+      "name": "Sushi",
+      "foodCategory": "continentalFoods",
+      "description": "Delicious food description.",
+      "price": "40",
+      "image": "/Assets/ContenentalFoods/sushi.png",
+      "id": "9"
+    },
+    {
+      "name": "Yorkshire Lamb Patties",
+      "foodCategory": "continentalFoods",
+      "description": "Delicious food description.",
+      "price": "100",
+      "image": "/Assets/ContenentalFoods/Yorkshire Lamb Patties.png",
+      "id": "10"
+    },
+    {
+      "name": "Baked Mushrooms",
+      "foodCategory": "continentalFoods",
+      "description": "You Must Try It",
+      "price": "100",
+      "image": "/Assets/ContenentalFoods/Baked mushrooms and capsicum.jpg",
+      "id": "305c"
+    }
+  ],
+  "localFoods": [
+    {
+      "name": "Beans And Tatale",
+      "foodCategory": "localFoods",
+      "description": "Delicious food description.",
+      "price": "25",
+      "image": "/Assets/localFoods/Beans and tatale.jpg",
+      "id": "12"
+    },
+    {
+      "id": "13",
+      "name": "Fufu and Goat Light Soup",
+      "price": 25,
+      "image": "/Assets/localFoods/Fufu and Goat light soup.jpg",
+      "description": "Delicious food description.",
+      "foodCategory": "localFoods"
+    },
+    {
+      "id": "14",
+      "name": "Grilled Tilapia With Banku",
+      "price": 25,
+      "image": "/Assets/localFoods/grilled_tilapia_regular_with_banku_a.png",
+      "description": "Delicious food description.",
+      "foodCategory": "localFoods"
+    },
+    {
+      "id": "15",
+      "name": "Kenkey And Fried Fish",
+      "price": 25,
+      "image": "/Assets/localFoods/Kenkey and fried fish.png",
+      "description": "Delicious food description.",
+      "foodCategory": "localFoods"
+    },
+    {
+      "id": "16",
+      "name": "Kokonte And Soup",
+      "price": 25,
+      "image": "/Assets/localFoods/kokonte and soup.jpg",
+      "description": "Delicious food description.",
+      "foodCategory": "localFoods"
+    },
+    {
+      "id": "17",
+      "name": "Tuu Zaafi",
+      "price": 25,
+      "image": "/Assets/localFoods/Tuu Zaafi.png",
+      "description": "Delicious food description.",
+      "foodCategory": "localFoods"
+    },
+    {
+      "id": "18",
+      "name": "Ommotua And Groundnut Soup",
+      "price": 25,
+      "image": "/Assets/localFoods/Ommotua and Grountnu soup.jpg",
+      "description": "Delicious food description.",
+      "foodCategory": "localFoods"
+    },
+    {
+      "id": "19",
+      "name": "Plantain And Kontomire",
+      "price": 25,
+      "image": "/Assets/localFoods/plantain and kontomire stew.jpg",
+      "description": "Delicious food description.",
+      "foodCategory": "localFoods"
+    },
+    {
+      "id": "20",
+      "name": "Waakye",
+      "price": 25,
+      "image": "/Assets/localFoods/waakye.jpeg",
+      "description": "Delicious food description.",
+      "foodCategory": "localFoods"
+    }
+  ],
+  "userAccounts": [
+    {
+      "name": "Middle Code",
+      "email": "code@gmail.com",
+      "phoneNumber": "0000000000",
+      "password": "admin",
+      "role": "admin",
+      "id": "122e"
+    },
+    {
+      "name": "Emmanuel Quansah",
+      "email": "emma@gmail.com",
+      "phoneNumber": "0123456789",
+      "password": "123",
+      "role": "user",
+      "id": "23e"
+    },
+    {
+      "id": "68a8",
+      "name": "Richie",
+      "email": "richmond@gmail.com",
+      "phoneNumber": "0541016968",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "3644",
+      "name": "richmond",
+      "email": "richmond@gmail.com",
+      "phoneNumber": "0054101696",
+      "password": "123456",
+      "role": "user"
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "name": "Assorted Fried Rice",
+      "price": "25",
+      "image": "/Assets/ContenentalFoods/Assorted fried rice.jpg",
+      "description": "Delicious food description."
+    }
+  ],
+  "orders": []
+}
